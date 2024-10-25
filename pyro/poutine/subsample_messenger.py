@@ -109,6 +109,7 @@ class SubsampleMessenger(IndepMessenger):
         """
         Helper function for plate. See its docstrings for details.
         """
+        assert size > 0 or size is None
         if size is None:
             assert subsample_size is None
             assert subsample is None

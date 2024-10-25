@@ -109,13 +109,13 @@ class SubsampleMessenger(IndepMessenger):
         """
         Helper function for plate. See its docstrings for details.
         """
-        assert size > 0 or size is None
         if size is None:
             assert subsample_size is None
             assert subsample is None
             size = -1  # This is PyTorch convention for "arbitrary size"
             subsample_size = -1
         else:
+            assert size > 0            
             msg = Message(
                 type="sample",
                 name=name,
